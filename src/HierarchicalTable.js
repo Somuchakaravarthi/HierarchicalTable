@@ -27,30 +27,8 @@ export const HierarchicalTable = () => {
       setInputValue(prev => ({ ...prev, [`${rowId}-${childId}`]: value }));
     };
   
-    const handleAddRow = (rowId) => {
-      const newRow = { id: `${rowId}-child`, label: `New Item`, value: 0 };
-      setRows(
-        rows.map(row =>
-          row.id === rowId
-            ? { ...row, children: [...row.children, newRow] }
-            : row
-        )
-      );
-    };
+
   
-    const handleRemoveRow = (rowId, childId) => {
-      setRows(
-        rows.map(row =>
-          row.id === rowId
-            ? {
-                ...row,
-                children: row.children.filter(child => child.id !== childId),
-                value: calculateValue(row.children.filter(child => child.id !== childId))
-              }
-            : row
-        )
-      );
-    };
   
     const handleAllocationPercentage = (rowId, childId) => {
       const percentage = parseFloat(inputValue[`${rowId}-${childId}`]);
