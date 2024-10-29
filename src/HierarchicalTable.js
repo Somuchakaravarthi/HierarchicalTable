@@ -159,20 +159,7 @@ export const HierarchicalTable = () => {
                       >
                         Allocation Val
                       </Button>
-                      {/* <Button 
-                        variant="contained" 
-                        color="primary"
-                        onClick={() => handleAddRow(row.id)}
-                      >
-                        Add
-                      </Button>
-                      <Button 
-                        variant="contained" 
-                        color="secondary"
-                        onClick={() => handleRemoveRow(row.id, child.id)}
-                      >
-                        Remove
-                      </Button> */}
+         
                     </td>
                   </tr>
                 ))}
