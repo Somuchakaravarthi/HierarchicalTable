@@ -31,7 +31,7 @@ export const HierarchicalTable = () => {
   
   
     const handleAllocationPercentage = (rowId, childId) => {
-      const percentage = parseFloat(inputValue[`${rowId}-${childId}`]);
+      const percentage = parseFloat(inputValue[`${rowId}-${childId}`]) ||0;
       setRows(
         rows.map(row =>
           row.id === rowId
@@ -55,7 +55,8 @@ export const HierarchicalTable = () => {
     };
   
     const handleAllocationValue = (rowId, childId) => {
-      const newValue = parseFloat(inputValue[`${rowId}-${childId}`]);
+      const newValue = parseFloat(inputValue[`${rowId}-${childId}`]) || 0;
+      if(newValue !==0){
       setRows(
         rows.map(row =>
           row.id === rowId
@@ -76,6 +77,7 @@ export const HierarchicalTable = () => {
         )
       );
       setInputValue(prev => ({ ...prev, [`${rowId}-${childId}`]: '' }));
+      }
     };
   
     const calculateGrandTotal = () => {
